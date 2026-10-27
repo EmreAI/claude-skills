@@ -11,7 +11,7 @@ Tier B reference for Nova SBE students. Load it only after tier A search (open-s
 | C | Licensed, the library lists on-campus access | Check the library page for current access options before suggesting a lookup |
 | T | Licensed, only on campus terminals, desktop software or the Social Sciences DataLab | Same as B, but on a Nova machine or via the DataLab |
 
-Never ask for passwords. Never log in on the student's behalf. Every B or T task names the database, the exact link, the search terms and the file to export.
+Never ask for passwords. Never log in on the student's behalf. Every B, C or T task names the database, the exact link, the search terms and the file to export.
 
 Use the library page to check the current access route for each licensed database; login and off-campus availability vary. General off-campus guidance: https://library.novasbe.unl.pt/off-campus-access/
 

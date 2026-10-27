@@ -1,6 +1,6 @@
 ---
 name: business-research
-description: Source-first research for business school projects, reports, cases and assignments. Use for market sizing, market entry, company or competitor analysis, industry overviews, business concept validation, literature reviews and any research question where source quality matters. Prioritises primary and open sources, verifies key numbers independently, and hands licensed databases (including Nova SBE library licenses) to the user as precise lookup tasks. Triggers on "research", "find sources", "market analysis", "analyse company X", "literature for my assignment", "data for my report".
+description: Source-first business research for market, company and industry analysis or literature reviews. Prioritises accessible primary sources, checks key claims, and identifies useful licensed databases, including Nova SBE resources.
 ---
 
 # Business Research
