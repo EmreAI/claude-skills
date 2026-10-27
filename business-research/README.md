@@ -1,6 +1,6 @@
 # Business Research
 
-A Claude skill for research a demanding professor or consulting partner would accept: market sizing, market entry, company and competitor analysis, industry overviews, literature reviews. Open, primary sources first, every number with a source and a date, key claims checked a second time.
+A Claude skill for source-first business research. It prioritises publicly accessible primary sources, traces findings to their sources and checks key claims. Built with Nova SBE students in mind, it also helps you identify relevant library databases and what to look up there, including sources such as Statista where appropriate.
 
 ## Install
 
@@ -11,16 +11,15 @@ A Claude skill for research a demanding professor or consulting partner would ac
 
 Claude Code: `unzip ~/Downloads/business-research.zip -d ~/.claude/skills/`
 
-## What it does
+## Workflow
 
-1. **Asks once.** Which sources (data, company reports, papers, press), how deep and which library access you have.
-2. **Plans.** Breaks the question into 4–7 sub-questions using a matching framework.
-3. **Searches open sources.** Official statistics, filings and annual reports before articles about them. Reads the page before using a number.
-4. **Hands you the paywalled part.** Licensed databases become a short task list: which database, the exact link, the search terms and the file to export.
-5. **Checks itself.** A separate agent re-opens the sources behind the 5–10 key claims.
-6. **Delivers.** Bottom line, findings with confidence levels, gaps, and a full source list.
+1. **Describe your project.** Share your research question, purpose, geography, timeframe, requirements and any sources or findings you already have. The more relevant context, the better.
+2. **Choose the approach.** Claude asks about source types, research depth and library access, then plans the research.
+3. **Research and check.** It searches accessible sources, prioritises primary material and checks key claims against the sources.
+4. **Review the output.** You receive findings with citations, confidence levels, gaps and a source list. When licensed sources could help, you also get a short list of databases, search terms and suggested exports.
+5. **Add library material.** If you upload relevant exports, Claude can incorporate them and update the findings.
 
-It never guesses links, never logs in for you and never works around paywalls.
+Access to library databases depends on your institution and its current licences. The skill does not bypass paywalls or log in for you.
 
 ## How it's built
 
@@ -30,7 +29,7 @@ business-research/
 └── references/
     ├── frameworks.md           sub-questions for each research type
     ├── open-sources.md         where to look, ranked by reliability
-    └── nova-sources.md         Nova SBE library databases (only used if you study there)
+    └── nova-sources.md         Nova SBE library database guidance
 ```
 
-Works for anyone. The Nova SBE file is only read when you say you have Nova SBE library access.
+Anyone can use the skill. The Nova SBE reference is used when you have Nova SBE library access.

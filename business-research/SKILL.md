@@ -5,7 +5,7 @@ description: Source-first research for business school projects, reports, cases 
 
 # Business Research
 
-Research that a demanding professor or a consulting partner would accept. The user wants better sources with less work, not more questions and not more reading.
+Source-first business research that prioritises accessible primary sources, traces findings to evidence and helps users identify relevant licensed databases, including Nova SBE library resources.
 
 ## Core rules
 
