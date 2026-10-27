@@ -98,7 +98,7 @@ Fix or remove anything not supported. Without the Agent tool, re-open the top fi
 
 ## Step 6. Output
 
-Deliver in the chat first. Offer a document only if the result is long or the user wants to keep it.
+Prepare a well-structured written report. When file creation is available, deliver it as an editable Word document (.docx) by default and provide a short summary in the chat. Respect a different format or chat-only delivery if the user requests it. If document creation is unavailable, deliver the full report in the chat and explain that no file could be created. Place citations immediately after each source-dependent claim or paragraph, so readers can trace the evidence; clearly distinguish analysis and assumptions from sourced facts.
 
 1. **Bottom line.** Three to five sentences answering the main question.
 2. **Findings by sub-question.** Each with the key facts, inline citations and a confidence tag. High means two or more independent primary sources. Medium means one primary or several secondary sources. Low means a single secondary source or an estimate.
