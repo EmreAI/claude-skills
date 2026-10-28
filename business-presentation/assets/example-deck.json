@@ -1,0 +1,489 @@
+{
+  "meta": {
+    "title": "Volta Bikes: Expanding to Porto",
+    "subtitle": "Fictional example deck, all data invented, for format reference only",
+    "team": "Team 4",
+    "course": "Strategy, Nova SBE",
+    "date": "November 2026",
+    "logo": "placeholder"
+  },
+  "theme": {
+    "name": "clean"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "org": "Volta Bikes (fictional)",
+      "doc": "Ride data 2022–2025",
+      "date": "2026"
+    },
+    {
+      "id": "S2",
+      "org": "Team analysis",
+      "doc": "City scoring and unit economics model",
+      "date": "Oct 2026"
+    },
+    {
+      "id": "S3",
+      "org": "Team survey",
+      "doc": "Porto commuters, n=212",
+      "date": "Oct 2026"
+    },
+    {
+      "id": "S4",
+      "org": "Team interviews",
+      "doc": "9 Porto commuters",
+      "date": "Oct 2026"
+    }
+  ],
+  "slides": [
+    {
+      "id": "cover",
+      "type": "title"
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "tracker": "Summary",
+      "title": "Volta should enter Porto in spring 2027 by partnering with the city transit operator",
+      "points": [
+        "Lisbon growth is slowing to 12% a year, so new cities are the next source of growth",
+        "Porto scores highest of the four cities we compared and has only one competitor",
+        "A partnership gets Volta to market in 6 months at less than half the upfront cost of going alone",
+        "Each bike would earn €420 a year after costs, but hills and safety need answers before launch"
+      ]
+    },
+    {
+      "id": "agenda",
+      "type": "agenda",
+      "title": "Agenda",
+      "items": [
+        "Where Volta stands in Lisbon",
+        "Why Porto",
+        "How to enter Porto",
+        "What it takes"
+      ]
+    },
+    {
+      "id": "lisbon-growth",
+      "type": "chart",
+      "tracker": "Lisbon today",
+      "title": "Lisbon rides tripled since 2022, but growth slowed to 12% in 2025",
+      "header": "Rides per year in Lisbon, thousands",
+      "chart": {
+        "type": "column",
+        "categories": [
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "series": [
+          {
+            "name": "Rides",
+            "values": [
+              140,
+              260,
+              390,
+              437
+            ]
+          }
+        ],
+        "highlight": [
+          3
+        ]
+      },
+      "takeaways": [
+        "Growth fell from 86% in 2023 to 12% in 2025",
+        "Fleet utilisation is already at 81%, so more bikes in Lisbon add little"
+      ],
+      "footnotes": [
+        "Growth 2025 is 437 against 390 thousand rides (+12%). Team calculation based on S1."
+      ],
+      "sources": [
+        "S1"
+      ],
+      "key_number": {
+        "value": "+12%",
+        "label": "Growth in 2025"
+      }
+    },
+    {
+      "id": "lisbon-season",
+      "type": "chart",
+      "tracker": "Lisbon today",
+      "title": "Rides fall by about half from summer to winter in both years",
+      "header": "Rides per month in Lisbon, thousands",
+      "chart": {
+        "type": "line",
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "series": [
+          {
+            "name": "2025",
+            "values": [
+              24,
+              26,
+              33,
+              38,
+              42,
+              46,
+              49,
+              50,
+              44,
+              35,
+              26,
+              24
+            ]
+          },
+          {
+            "name": "2024",
+            "values": [
+              21,
+              23,
+              29,
+              34,
+              37,
+              41,
+              44,
+              45,
+              39,
+              31,
+              24,
+              22
+            ],
+            "color": "grey"
+          }
+        ]
+      },
+      "callout": "A spring launch in Porto gives the new fleet its first months in the strongest season.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "city-scores",
+      "type": "chart",
+      "tracker": "Why Porto",
+      "title": "Porto scores highest of the four cities we compared, at 7.8 out of 10",
+      "header": "Attractiveness score by city, 0–10",
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "Porto",
+          "Braga",
+          "Coimbra",
+          "Faro"
+        ],
+        "series": [
+          {
+            "name": "Score",
+            "values": [
+              7.8,
+              6.1,
+              5.4,
+              4.2
+            ]
+          }
+        ],
+        "highlight": [
+          0
+        ],
+        "decimals": 1
+      },
+      "footnotes": [
+        "Weights are market size 40%, competition 30%, cycling infrastructure 20% and tourism 10%."
+      ],
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "porto-kpis",
+      "type": "kpis",
+      "tracker": "Why Porto",
+      "title": "Porto offers about €4.1M in yearly revenue and has only one bike sharing competitor",
+      "kpis": [
+        {
+          "value": "230k",
+          "label": "Potential riders",
+          "context": "Residents aged 18–64 within 500 m of a bike lane"
+        },
+        {
+          "value": "€4.1M",
+          "label": "Yearly revenue potential",
+          "context": "At Lisbon prices and 60% of Lisbon's rides per resident"
+        },
+        {
+          "value": "1",
+          "label": "Competitor",
+          "context": "Docked bikes only, 400 bikes in the city centre"
+        }
+      ],
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "survey-age",
+      "type": "chart",
+      "tracker": "Why Porto",
+      "title": "Half of respondents under 35 would use e-bikes, against a fifth of those over 50",
+      "header": "Would you use a shared e-bike for commuting? Share of respondents by age, %",
+      "chart": {
+        "type": "stacked_bar",
+        "categories": [
+          "18–34",
+          "35–49",
+          "50+"
+        ],
+        "series": [
+          {
+            "name": "Yes",
+            "values": [
+              50,
+              34,
+              21
+            ]
+          },
+          {
+            "name": "Maybe",
+            "values": [
+              30,
+              33,
+              29
+            ]
+          },
+          {
+            "name": "No",
+            "values": [
+              20,
+              33,
+              50
+            ],
+            "color": "grey"
+          }
+        ],
+        "suffix": "%"
+      },
+      "sources": [
+        "S3"
+      ]
+    },
+    {
+      "id": "sec-entry",
+      "type": "section",
+      "number": 3,
+      "title": "How to enter Porto"
+    },
+    {
+      "id": "entry-options",
+      "type": "library",
+      "pattern": "scoring-model",
+      "tracker": "How to enter Porto",
+      "title": "Partnering with the city transit operator scores highest, mainly on speed and cost",
+      "header": "Three entry options on four weighted criteria, team scoring from 1 (poor) to 5 (very good)",
+      "content": {
+        "options": [
+          "Launch alone",
+          "Partner with transit operator",
+          "Buy the local competitor"
+        ],
+        "criteria": [
+          "Time to launch (40%)",
+          "Upfront cost (30%)",
+          "Control (20%)",
+          "Fleet quality (10%)"
+        ],
+        "scores": [
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            5,
+            1
+          ],
+          [
+            5,
+            2,
+            4
+          ],
+          [
+            5,
+            5,
+            2
+          ]
+        ],
+        "weighted_score": [
+          3.2,
+          4.0,
+          3.3
+        ],
+        "facts": [
+          "Launch alone takes 12 months and costs €2.4M",
+          "The partnership takes 6 months and costs €0.9M",
+          "Buying the competitor takes 4 months and costs €3.8M"
+        ],
+        "highlight": "Partner with transit operator"
+      },
+      "team_input": "Does a 15% revenue share still fit the margin target from the case? Decide as a group.",
+      "footnotes": [
+        "Weighted score is the sum of score times weight. Team calculation based on S2."
+      ],
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "unit-economics",
+      "type": "chart",
+      "tracker": "What it takes",
+      "title": "Each bike would earn €420 a year after costs and the partner's share",
+      "header": "Yearly economics per bike in Porto, €",
+      "chart": {
+        "type": "waterfall",
+        "categories": [
+          "Revenue",
+          "Maintenance",
+          "Charging",
+          "Partner share",
+          "Depreciation",
+          "Contribution"
+        ],
+        "series": [
+          {
+            "name": "€ per bike",
+            "values": [
+              1450,
+              -380,
+              -120,
+              -220,
+              -310,
+              420
+            ]
+          }
+        ],
+        "totals": [
+          0,
+          5
+        ]
+      },
+      "footnotes": [
+        "Depreciation over 4 years. Partner share is 15% of revenue."
+      ],
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "interviews",
+      "type": "quotes",
+      "tracker": "What it takes",
+      "title": "Commuters we interviewed see hills and safety as bigger hurdles than price",
+      "quotes": [
+        {
+          "text": "With a normal bike I would arrive at work soaked. With an e-bike, maybe.",
+          "who": "Office worker, 41, Boavista"
+        },
+        {
+          "text": "The price is fine. I just don't feel safe on the roads near the river.",
+          "who": "Student, 22, Ribeira"
+        },
+        {
+          "text": "If there were bikes at the metro station, I would use them every day.",
+          "who": "Nurse, 35, Matosinhos"
+        }
+      ],
+      "sources": [
+        "S4"
+      ]
+    },
+    {
+      "id": "risks",
+      "type": "library",
+      "pattern": "risk-matrix",
+      "tracker": "What it takes",
+      "title": "Hills and safety are the two risks that need a plan before launch",
+      "header": "Main risks by likelihood and impact, with mitigation, team assessment",
+      "content": {
+        "risks": [
+          [
+            "A",
+            "Hills drain batteries faster",
+            "Likelihood high, impact high",
+            "Swap batteries at metro stations"
+          ],
+          [
+            "B",
+            "Few protected lanes near the river",
+            "Likelihood high, impact medium",
+            "Start with routes along protected lanes"
+          ],
+          [
+            "C",
+            "Partner dependence for 3 years",
+            "Likelihood medium, impact medium",
+            "[TEAM: add your view on exit terms]"
+          ]
+        ]
+      },
+      "sources": [
+        "S2",
+        "S4"
+      ]
+    },
+    {
+      "id": "roadmap",
+      "type": "steps",
+      "tracker": "What it takes",
+      "title": "A spring 2027 launch needs the partner contract signed by December 2026",
+      "steps": [
+        {
+          "label": "Dec 2026",
+          "heading": "Sign partner",
+          "body": "Agree revenue share and station access"
+        },
+        {
+          "label": "Mar 2027",
+          "heading": "Pilot",
+          "body": "150 bikes at 10 metro stations"
+        },
+        {
+          "label": "Jun 2027",
+          "heading": "Review",
+          "body": "Go on if usage reaches 2 rides per bike a day"
+        },
+        {
+          "label": "Sep 2027",
+          "heading": "Scale",
+          "body": "600 bikes across the city"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "type": "closing",
+      "title": "Questions?"
+    },
+    {
+      "id": "sources",
+      "type": "sources",
+      "title": "Sources"
+    }
+  ]
+}

@@ -109,6 +109,10 @@ Prepare a well-structured written report. When file creation is available, deliv
 
 Citation format in the text is [Organisation, Document, Date], for example [Eurostat, Household consumption by purpose, 2025].
 
+**Evidence ledger appendix.** Add the evidence ledger as the report's last section, as a table with one row per claim: claim, value, unit, period, source, confidence. It keeps the exact numbers available for later work.
+
+**Presentation handoff.** If the research is for a presentation, or the user asks for slides, end the chat summary by offering to build a deck from the report with the business-presentation skill. That skill takes over the ledger, the sources and the confidence tags, and turns the Gaps section into placeholders.
+
 ## Step 7. Round two
 
 When the user uploads exports from tier B databases, read them, add the new facts to the ledger, recheck any finding they contradict and deliver an updated version that marks what changed.

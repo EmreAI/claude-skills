@@ -1,0 +1,74 @@
+<h2 class="sr-only" id="ds-sr">Debate stage</h2>
+<style>
+.ds{padding:.5rem 0 1rem}
+.ds-mo{font-size:13px;color:var(--text-secondary);line-height:1.5;margin:0 0 .9rem}
+.ds-mo b{font-weight:500;color:var(--text-primary)}
+.ds-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:12px;color:var(--text-secondary);margin:0 0 1.1rem}
+.ds-m{display:inline-flex;gap:3px;margin:0 6px;vertical-align:middle}
+.ds-m i{width:16px;height:6px;border-radius:3px;background:var(--border-strong)}
+.ds-m i.on{background:#378ADD}
+.ds-note{font-size:13px;color:var(--text-secondary);font-style:italic;margin:0 0 1.1rem}
+.sp{border-left:3px solid var(--c);border-radius:0;padding:2px 0 2px 14px;margin:0 0 1.1rem}
+.sp-h{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--text-secondary);margin:0 0 4px}
+.sp-h .ti{font-size:17px;color:var(--c)}
+.sp-tag{font-size:11px;font-weight:400;padding:1px 7px;border-radius:var(--radius);background:var(--surface-1)}
+.sp p{margin:0 0 6px;font-size:15px;line-height:1.65;color:var(--text-primary)}
+.src{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:12px}
+.src a{color:var(--text-secondary)}
+.oa-h{font-size:12px;color:var(--text-secondary);margin:1.4rem 0 4px}
+.oa{list-style:none;padding:0;margin:0 0 1.3rem;border-top:.5px solid var(--border)}
+.oa li{display:flex;gap:10px;align-items:baseline;padding:7px 0;border-bottom:.5px solid var(--border);font-size:14px;color:var(--text-primary)}
+.oa .by{font-size:12px;color:var(--text-muted);min-width:18px}
+.oa .pt{flex:1}
+.chip{font-size:11px;padding:2px 8px;border-radius:var(--radius);white-space:nowrap}
+.k-open{background:var(--bg-danger);color:var(--text-danger)}
+.k-partial{background:var(--bg-warning);color:var(--text-warning)}
+.k-answered{background:var(--bg-success);color:var(--text-success)}
+.k-conceded{background:var(--surface-1);color:var(--text-secondary)}
+.ds-act{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ds-act .end{margin-left:auto}
+</style>
+<div class="ds" id="ds"></div>
+<script>
+const D = {"lang":"en","round":1,"motion":"","opposition":"","level":0,"mod":"","speeches":[],"attacks":[]};
+const T = {
+en:{motion:"Your motion",opp:"Opposition",round:"Round",ev:"Evidence",lv:["Reasoning","Examples","Figures","Sourced"],
+A:"Opponent A · Empiricist",B:"Opponent B · Logician",ally:"Ally",hint:"hint",backup:"backup",
+open:"Open attacks",st:{open:"open",partial:"partly answered",answered:"answered",conceded:"conceded"},
+h:"Hint",s:"Ally, step in",x:"Stop and evaluate",
+mh:"Give me a hint.",ms:"I'm stuck. Ally, step in.",mx:"Stop the debate and evaluate.",sr:"Debate stage, round "},
+de:{motion:"Deine These",opp:"Gegenposition",round:"Runde",ev:"Faktenniveau",lv:["Begründung","Beispiele","Zahlen","Belegt"],
+A:"Gegner A · Empiriker",B:"Gegner B · Logiker",ally:"Unterstützer",hint:"Tipp",backup:"Verstärkung",
+open:"Offene Angriffe",st:{open:"offen",partial:"teilweise beantwortet",answered:"beantwortet",conceded:"zugestanden"},
+h:"Tipp",s:"Unterstützer, übernimm",x:"Beenden und auswerten",
+mh:"Gib mir einen Tipp.",ms:"Ich komme nicht weiter. Unterstützer, übernimm.",mx:"Stopp. Debatte beenden und auswerten.",sr:"Debattenbühne, Runde "}
+}[D.lang==="de"?"de":"en"];
+const R = {A:{c:"#D85A30",i:"ti-chart-dots"},B:{c:"#D4537E",i:"ti-git-branch"},ally:{c:"#1D9E75",i:"ti-shield-check"}};
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const lvl = Math.max(0, Math.min(3, Number(D.level) || 0));
+let h = "";
+h += '<p class="ds-mo"><b>' + T.motion + ':</b> ' + esc(D.motion) + (D.opposition ? '<br><b>' + T.opp + ':</b> ' + esc(D.opposition) : '') + '</p>';
+h += '<div class="ds-bar"><span>' + T.round + ' ' + esc(D.round) + '</span><span>' + T.ev + '<span class="ds-m" aria-hidden="true">' + [0,1,2,3].map(i => '<i class="' + (i <= lvl ? 'on' : '') + '"></i>').join('') + '</span>' + T.lv[lvl] + '</span></div>';
+if (D.mod) h += '<p class="ds-note">' + esc(D.mod) + '</p>';
+(D.speeches || []).forEach(s => {
+  const r = R[s.who] || R.A;
+  const tag = s.who === "ally" && s.mode ? '<span class="sp-tag">' + esc(T[s.mode] || s.mode) + '</span>' : '';
+  const ps = String(s.text || "").split(/\n\s*\n/).map(p => '<p>' + esc(p.trim()) + '</p>').join('');
+  const src = (s.sources || []).filter(x => x && /^https?:\/\//.test(x.u || "")).map(x => '<a href="' + esc(x.u) + '"><i class="ti ti-external-link" aria-hidden="true"></i> ' + esc(x.t || x.u) + '</a>').join('');
+  h += '<div class="sp" style="--c:' + r.c + '"><div class="sp-h"><i class="ti ' + r.i + '" aria-hidden="true"></i>' + esc(T[s.who] || s.who) + tag + '</div>' + ps + (src ? '<div class="src">' + src + '</div>' : '') + '</div>';
+});
+const at = D.attacks || [];
+if (at.length) {
+  h += '<p class="oa-h">' + T.open + '</p><ul class="oa">' + at.map(a => {
+    const k = T.st[a.status] ? a.status : "open";
+    return '<li><span class="by">' + esc(a.by) + '</span><span class="pt">' + esc(a.point) + '</span><span class="chip k-' + k + '">' + T.st[k] + '</span></li>';
+  }).join('') + '</ul>';
+}
+h += '<div class="ds-act"><button type="button" id="ds-h">' + T.h + ' ↗</button><button type="button" id="ds-s">' + T.s + ' ↗</button><button type="button" class="end" id="ds-x">' + T.x + ' ↗</button></div>';
+document.getElementById("ds").innerHTML = h;
+document.getElementById("ds-sr").textContent = T.sr + D.round;
+const go = m => sendPrompt(m);
+document.getElementById("ds-h").addEventListener("click", () => go(T.mh));
+document.getElementById("ds-s").addEventListener("click", () => go(T.ms));
+document.getElementById("ds-x").addEventListener("click", () => go(T.mx));
+</script>
