@@ -37,7 +37,7 @@ import zipfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 TEXT_DIR = "_text"
 MANIFEST = ".manifest.json"
 IGNORE_FILE = ".ignore"
@@ -179,12 +179,13 @@ def strip_repeated(pages):
     """Drop page numbers and header/footer lines that repeat on most pages."""
     n = len(pages)
     removed = []
-    if n >= 6:
+    if n >= 3:
         counts = {}
         for lines in pages:
             for key in {re.sub(r"\d+", "#", l.lower()) for l in lines if len(l) <= 100}:
                 counts[key] = counts.get(key, 0) + 1
-        rep = {k for k, c in counts.items() if c >= max(3, 0.5 * n) and k.strip("#- ")}
+        need = max(3, 0.5 * n) if n >= 6 else n      # short files: only lines on every page
+        rep = {k for k, c in counts.items() if c >= need and k.strip("#- ")}
         if rep:
             seen = set()
             new_pages = []
